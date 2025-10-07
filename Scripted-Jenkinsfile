@@ -2,7 +2,7 @@ node {
     def mvnPath
     
     stage('git clone process') {
-        git 'https://github.com/Tris142/maven-web-app.git'
+        git branch: 'main', url: 'https://github.com/Tris142/awsdevops-project.git'
     }
     
     stage('Maven build'){
