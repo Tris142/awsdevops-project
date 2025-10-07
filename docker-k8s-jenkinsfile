@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/Tris142/maven-web-app.git'
+                git branch: 'main', url: 'https://github.com/Tris142/awsdevops-project.git'
             }
         }
         stage('Maven Build') {
