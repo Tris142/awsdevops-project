@@ -11,9 +11,9 @@
        src: target
        dest: /home/ansadmin
     - name : Build image
-      command: docker build -t awsdevops/mavenwebapp .
+      command: docker build -t tris146/mavenwebapp .
     - name : Push Docker Image
-      command: docker push awsdevops/mavenwebapp
+      command: docker push tris146/mavenwebapp
 - name: Second Play - K8s Deployment
   hosts: eks
   tasks:
