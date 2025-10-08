@@ -17,7 +17,7 @@ pipeline {
         }
         stage('docker image'){
             steps {
-                sh 'docker build -t awsdevops/mavenwebapp .'
+                sh 'docker build -t tris146/mavenwebapp .'
             }
         }
         stage('k8s deploy'){
