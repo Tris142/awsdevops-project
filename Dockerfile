@@ -1,4 +1,10 @@
 FROM tomcat:10-jdk17
-MAINTAINER tris146 <trishalaababu@gmail.coms>
+LABEL maintainer="Trishalaa <trishala@gmail.com>"
+
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+COPY target/maven-webapp-deploy.war /usr/local/tomcat/webapps/ROOT.war
+
 EXPOSE 8080
-COPY target/maven-web-app.war /usr/local/tomcat/webapps/maven-web-app.war
+HEALTHCHECK --interval=30s --timeout=3s --start-period=30s \
+  CMD curl -f http://localhost:8080/ || exit 1
